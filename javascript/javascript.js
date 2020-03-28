@@ -1,16 +1,10 @@
 console.log("let's begin here ...");
-console.log("--------------------")
+console.log("--------------------");
 var timeDiv = $('<div id="time-block"></div>').text("let's begin here ...");
-
 var rowDiv = $('<div id="row" class="row"></div>');
 $(".jumbotron").append(timeDiv);
 
-var amTxt = "am";
-var pmTxt = "pm";
-var eventState = "";
-var hoursA = "";
-var hoursP = "";
-var uId = "";
+
 
 for (let i = 0; i < 9; i++) {
     var rowDiv = $('<div id="row" class="row"></div>');
@@ -55,30 +49,79 @@ for (let i = 0; i < 9; i++) {
             return uId;
         }
     }
-    // console.log(" ---> " + eventState);
-    // console.log(hours());
-    var hourDiv = $('<div id="hour'+ hours() +'" data-hour="'+ hours() +'"></div>').text(hours());
-    hourDiv.attr("class", "hour col-3");
-    rowDiv.append(hourDiv);
 
-    var eventDiv = $('<input id="newEvent'+ hours() +'" type="text" data-hour="'+ hours() +'"></div>');
-    eventDiv.attr("class", "time-block col-6 "+ eventState);
-    rowDiv.append(eventDiv);
-    
-    var saveDiv = $('<button id="save'+ hours() +'"data-hour="'+ hours() +'"></button>').text("save");
-    saveDiv.attr("class", "saveBtn col-3 "+ eventState);
-    // saveDiv.attr("class", eventState);
-    rowDiv.append(saveDiv);
+
+
+var key;
+var value;
+var varBuild;
+var timeArray = [];
+var eventArray = [];
+var storeLength;
+
+function getBtn(time) {
+    event.preventDefault();
+    varBuildID = "#" + time;
+    timeArray.push(time);
+    eventArray.push($(varBuildID).val());
+    storeData(timeArray, eventArray);
 }
 
-function getBtn() {
-    // 
-    // event.preventDefault();
-    console.log(this);
-    console.log(this.id);
-    console.log($(this).attr("data-hour"));
+function checkStorage() {
+    if (localStorage.length === 0) {
+        console.log("nope.");
+        return false;
+    } else {
+        console.log("yep.");
+        return true;
+    }
+}
+
+function storeData(key, value) {
+    localStorage.setItem("time", key);
+    localStorage.setItem("event", value);
+}
+
+function clearData() {
+    for (let i = 0; i < timeArray.length; i++) {
+        var eraseID = "#" + timeArray[i];
+        var eraseEvent = "";
+        $(eraseID).val(eraseEvent);
+    }
+    localStorage.clear();
+}
+
+function restoreData() {
+    eventArray = eventArray.split(",");
+    timeArray = timeArray.split(",");
+    for (let i = 0; i < timeArray.length; i++) {
+        var restoreID = "#" + timeArray[i];
+        var restoreEvent = eventArray[i];
+        $(restoreID).val(restoreEvent);
+    }
+}
+
+function getStorage() {
+    timeArray = localStorage.getItem("time");
+    eventArray = localStorage.getItem("event");
+    restoreData();
 }
 
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"))
 
-$(document).on("click", ".saveBtn", getBtn);
+if (checkStorage()) {
+    storeLength = localStorage.length;
+    console.log(storeLength + " there's something there!");
+    getStorage();
+} else {
+    console.log("there's nothing there.");
+}
+
+// localStorage.clear();
+
+$(document).on("click", ".saveBtn", function () {
+    var getDataTime = $(this).data("time");
+    getBtn(getDataTime);
+});
+
+$("#clear-calendar").on("click", clearData);
