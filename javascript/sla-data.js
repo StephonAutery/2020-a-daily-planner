@@ -1,5 +1,0 @@
-{
-    eventDate: 
-    eventTime:
-    eventTitle:
-}

@@ -2,43 +2,53 @@ Work Day Scheduler
 
 This app is a simple work day calendar that allows the user to save events for each hour of the work day (9a - 5p).
 
-## User Story
+css, javascript, bootstrap CDN and JQuery are used to create a quiz.
+
+## Site Picture
+![Site](/images/work-scheduler-1.PNG)
+
+
+## Technologies Used
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [javaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [bootstrap cdn](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+- [GitLab](https://gitlab.com/) - version control system to track changes to source code
+- [GitHub](https://github.com/) - hosts repository that can be deployed to GitHub Pages
+## Summary 
+This app is a simple work day calendar that allows the user to save events for each hour of the work day (9a - 5p).
+
+## Code Snippet
+powerful.
+
+```javaScript
+
+    $(document).on("click", ".saveBtn", function () {
+        var getDataTime = $(this).data("time");
+        getBtn(getDataTime);
+    });
 
 ```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
 
-## Acceptance Criteria
+## Deployed Link
 
-```
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+* [see live site](https://stephonautery.github.io/2020-a-daily-planner/)
+* [github repository](https://github.com/StephonAutery/2020-a-daily-planner)
 
-The following animation demonstrates the application functionality:
+## Authors
 
-![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+* **Stephon Autery** 
 
-## Review
+- [link to portfolio Site](https://github.com/StephonAutery)
+- [link to LinkedIn](https://www.linkedin.com/in/stephon-a-1bb575198/)
 
-You are required to submit the following for review:
+## License
 
-* The URL of the deployed application.
+This project is in the public domain.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+images: copyright Stephon Autery
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## Acknowledgments
+
+* UCBerkeley Coding Bootcamp is still Awesome!
+

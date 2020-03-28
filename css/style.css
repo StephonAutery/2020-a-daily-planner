@@ -33,7 +33,7 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 60px;
   border-top: 1px solid white;;
 }
 
@@ -59,6 +59,7 @@ textarea{
 }
 
 .saveBtn {
+  width: 20px;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -71,8 +72,6 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-
-/* ------- my shit */
 .footer{
   padding: 20px;
 }
