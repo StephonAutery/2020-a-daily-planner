@@ -1,5 +1,3 @@
-console.log("let's begin here ...");
-console.log("--------------------");
 var timeDiv = $('<div id="time-block"></div>').text("let's begin here ...");
 var rowDiv = $('<div id="row" class="row"></div>');
 $(".jumbotron").append(timeDiv);
@@ -11,9 +9,8 @@ function hours() {
     for (let i = 9; i <= 12; i++) {
         var eventHour = "#" + i;
         if (i < momentHour){
-            console.log(typeof(momentHour));
             $(eventHour).attr("class","past");
-        } else if (toString(i) == momentHour){
+        } else if (i == momentHour){
             $(eventHour).attr("class","present");
         } else {$(eventHour).attr("class","future");}
     }
@@ -21,7 +18,7 @@ function hours() {
         var eventHour = "#" + i;
         if (i < momentHour){
             $(eventHour).attr("class","past");
-        } else if (toString(i) === momentHour){
+        } else if (i == momentHour){
             $(eventHour).attr("class","present");
         } else {$(eventHour).attr("class","future");}
     }
