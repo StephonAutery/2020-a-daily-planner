@@ -16,7 +16,7 @@ function hours() {
     }
     for (let i = 1; i <= 5; i++) {
         var eventHour = "#" + i;
-        if (i < momentHour){
+        if (i < momentHour && amPm === "p"){
             $(eventHour).attr("class","past");
         } else if (i == momentHour){
             $(eventHour).attr("class","present");
