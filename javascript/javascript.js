@@ -48,6 +48,8 @@ function hours() {
     }
 
     function storeData(key, value) {
+        key = JSON.stringify(key);
+        value = JSON.stringify(value);
         localStorage.setItem("time", key);
         localStorage.setItem("event", value);
     }
@@ -62,8 +64,8 @@ function hours() {
     }
 
     function restoreData() {
-        eventArray = eventArray.split(",");
-        timeArray = timeArray.split(",");
+        // eventArray = eventArray.split(",");
+        // timeArray = timeArray.split(",");
         for (let i = 0; i < timeArray.length; i++) {
             var restoreID = "#" + timeArray[i];
             var restoreEvent = eventArray[i];
@@ -72,8 +74,9 @@ function hours() {
     }
 
     function getStorage() {
-        timeArray = localStorage.getItem("time");
-        eventArray = localStorage.getItem("event");
+        timeArray = JSON.parse(localStorage.getItem("time"));
+        eventArray = JSON.parse(localStorage.getItem("event"));
+
         restoreData();
     }
 
