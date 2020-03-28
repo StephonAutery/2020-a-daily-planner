@@ -7,6 +7,10 @@ css, javascript, bootstrap CDN and JQuery are used to create a quiz.
 ## Site Picture
 ![Site](/images/work-scheduler-1.PNG)
 
+![Site](/images/functioning-calendar-app-1.PNG)
+
+![Site](/images/functioning-calendar-app-2.PNG)
+
 
 ## Technologies Used
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
